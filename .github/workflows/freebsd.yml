@@ -15,8 +15,9 @@ jobs:
         envs: 'MYTOKEN MYTOKEN2'
         usesh: true
         prepare: |
+          pkg update -f
           pkg install -y curl
-          pkg install -y py38 py38-pip
+          pkg install -y py38-pip
 
         run: |
           pwd
