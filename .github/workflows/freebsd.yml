@@ -22,7 +22,7 @@ jobs:
           ln -s /usr/local/bin/python3.9 /usr/local/bin/python
           pkg install -y py39-pip
           pip install --upgrade pip
-          pip install -r -y https://github.com/PyThaiNLP/pythainlp/raw/dev/docker_requirements.txt
+          pip install -r https://github.com/PyThaiNLP/pythainlp/raw/dev/docker_requirements.txt
 
         run: |
           pwd
