@@ -14,10 +14,14 @@ jobs:
       with:
         envs: 'MYTOKEN MYTOKEN2'
         usesh: true
+        release: 13.1
         prepare: |
           pkg update -f
           pkg install -y curl
-          pkg install -y py38-pip
+          pkg install -y python3
+          ln -s /usr/local/bin/python3.9 /usr/local/bin/python
+          pkg install -y py39-pip
+          pip install --upgrade pip
 
         run: |
           pwd
@@ -25,4 +29,5 @@ jobs:
           whoami
           env
           freebsd-version
+          python --version
           pip --version
